@@ -1,0 +1,32 @@
+<template>
+    <div class="calculator-container">
+        <p class="title">Calculator</p>
+        <div class="input-container">
+            <lightning-input type="number" label="First Number" placeholder="Enter Your first number" class="input-field"></lightning-input>
+            <lightning-input type="number" label="Second Number" placeholder="Enter Your second number" class="input-field"></lightning-input>
+        </div>
+        <div class="button-container">
+            <lightning-button 
+                variant="brand" 
+                label="Add" 
+                onclick={handleClick} 
+                class="calc-button">
+            </lightning-button>
+            <lightning-button 
+                variant="brand" 
+                label="Subtract" 
+                onclick={handleClick} 
+                class="calc-button">
+            </lightning-button>
+            <lightning-button 
+                variant="brand" 
+                label="Multiply" 
+                onclick={handleClick} 
+                class="calc-button">
+            </lightning-button>
+        </div>
+        <div class="result" if:true={showResult}>
+            <p>Result: {result}</p>
+        </div>
+    </div>
+</template>
