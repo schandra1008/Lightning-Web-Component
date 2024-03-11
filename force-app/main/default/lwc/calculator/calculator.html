@@ -1,45 +1,31 @@
 <template>
-    <div class="calculator-container">
-        <p class="title">Calculator</p>
-        <div class="input-container">
-            <lightning-input type="number" label="First Number" placeholder="Enter Your first number" class="input-field"></lightning-input>
-            <lightning-input type="number" label="Second Number" placeholder="Enter Your second number" class="input-field"></lightning-input>
-        </div>
-        <div class="button-container">
-            <lightning-button 
-                variant="brand" 
-                label="Add" 
-                onclick={handleClick} 
-                class="calc-button">
-            </lightning-button>
-            <lightning-button 
-                variant="brand" 
-                label="Subtract" 
-                onclick={handleClick} 
-                class="calc-button">
-            </lightning-button>
-            <lightning-button 
-                variant="brand" 
-                label="Multiply" 
-                onclick={handleClick} 
-                class="calc-button">
-            </lightning-button>
-        </div>
-        <div class="result" if:true={showResult}>
-            <p>Result: {result}</p>
+    <div class="calculator">
+        <input type="text" class="display" readonly value={displayValue}>
+        <div class="buttons">
+            <div class="row">
+                <lightning-button class="number" label="7" onclick={addToDisplay} data-value="7"></lightning-button>
+                <lightning-button class="number" label="8" onclick={addToDisplay} data-value="8"></lightning-button>
+                <lightning-button class="number" label="9" onclick={addToDisplay} data-value="9"></lightning-button>
+                <lightning-button class="operator" label="+" onclick={addToDisplay} data-value="+"></lightning-button>
+            </div>
+            <div class="row">
+                <lightning-button class="number" label="4" onclick={addToDisplay} data-value="4"></lightning-button>
+                <lightning-button class="number" label="5" onclick={addToDisplay} data-value="5"></lightning-button>
+                <lightning-button class="number" label="6" onclick={addToDisplay} data-value="6"></lightning-button>
+                <lightning-button class="operator" label="-" onclick={addToDisplay} data-value="-"></lightning-button>
+            </div>
+            <div class="row">
+                <lightning-button class="number" label="1" onclick={addToDisplay} data-value="1"></lightning-button>
+                <lightning-button class="number" label="2" onclick={addToDisplay} data-value="2"></lightning-button>
+                <lightning-button class="number" label="3" onclick={addToDisplay} data-value="3"></lightning-button>
+                <lightning-button class="operator" label="*" onclick={addToDisplay} data-value="*"></lightning-button>
+            </div>
+            <div class="row">
+                <lightning-button class="clear" label="C" onclick={clearDisplay}></lightning-button>
+                <lightning-button class="number" label="0" onclick={addToDisplay} data-value="0"></lightning-button>
+                <lightning-button class="operator" label="/" onclick={addToDisplay} data-value="/"></lightning-button>
+                <lightning-button class="calculate" label="=" onclick={calculate}></lightning-button>
+            </div>
         </div>
     </div>
-    <div>ljkjgn</div>
-    <lightning-card title="Simple Calculator" icon-name="utility:calculator">
-        <div class="slds-p-around_medium">
-            <div class="calculator-screen">
-                {displayValue}
-            </div>
-            <div class="calculator-buttons">
-                <template for:each={buttons} for:item="button">
-                    <lightning-button key={button.label} label={button.label} onclick={handleButtonClick}></lightning-button>
-                </template>
-            </div>
-        </div>
-    </lightning-card> 
 </template>
