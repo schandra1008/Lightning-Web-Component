@@ -37,3 +37,21 @@
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+ /* change */
+.calculator-screen {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: right;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.lightning-button {
+    width: 100%;
+}

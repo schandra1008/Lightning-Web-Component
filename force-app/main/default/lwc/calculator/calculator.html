@@ -29,4 +29,16 @@
             <p>Result: {result}</p>
         </div>
     </div>
+    <lightning-card title="Simple Calculator" icon-name="utility:calculator">
+        <div class="slds-p-around_medium">
+            <div class="calculator-screen">
+                {displayValue}
+            </div>
+            <div class="calculator-buttons">
+                <template for:each={buttons} for:item="button">
+                    <lightning-button key={button.label} label={button.label} onclick={handleButtonClick}></lightning-button>
+                </template>
+            </div>
+        </div>
+    </lightning-card> 
 </template>
